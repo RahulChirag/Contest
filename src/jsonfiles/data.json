@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "Theme": "Harry Potter",
+    "Content": {
+      "Levels": [
+        {
+          "id": 0,
+          "Level": "Level 1",
+          "GamePath": "/assets/harry-potter-MCQ.json",
+          "GameType": "MCQ"
+        },
+        {
+          "id": 1,
+          "Level": "Level 2",
+          "GamePath": "/assets/harry-potter-Spell.json",
+          "GameType": "Spell"
+        },
+        {
+          "id": 2,
+          "Level": "Level 3",
+          "GamePath": "/assets/harry-potter-Spell.json",
+          "GameType": "Spell"
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "Theme": "Marvel Cinematic",
+    "Content": {
+      "Levels": [
+        {
+          "id": 0,
+          "Level": "Level 1",
+          "GamePath": "/assets/marvel-MCQ.json",
+          "GameType": "MCQ"
+        },
+        {
+          "id": 1,
+          "Level": "Level 2",
+          "GamePath": "/assets/marvel-Spell.json",
+          "GameType": "Spell"
+        }
+      ]
+    }
+  }
+]

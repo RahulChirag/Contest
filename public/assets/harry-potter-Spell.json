@@ -1,0 +1,99 @@
+{
+  "eachQuestionDuration": 60,
+  "questions": [
+    {
+      "id": 1,
+      "questionImage": null,
+      "question": "What is the first step to initiate the installation process of software in Windows 10?",
+      "options": [
+        "Accept the End User License Agreement (EULA).",
+        "Double-click the installer file with a \".exe\" extension.",
+        "Choose the installation location.",
+        "Create a desktop icon"
+      ],
+      "optionImages": [],
+      "answer": ["Double-click the installer file with a \".exe\" extension."]
+    },
+    {
+      "id": 2,
+      "questionImage": null,
+      "question": "What action triggers the User Account Control (UAC) prompt during software installation in Windows 10?",
+      "options": [
+        "Choosing the installation location",
+        "Double-clicking the installer file.",
+        "Accepting the End User License Agreement (EULA)",
+        "Creating a desktop icon"
+      ],
+      "optionImages": [],
+      "answer": ["Double-clicking the installer file."]
+    },
+    {
+      "id": 3,
+      "questionImage": null,
+      "question": "Where can you find the option to accept the End User License Agreement (EULA) during software installation?",
+      "options": [
+        "In the installation location settings.",
+        "After creating a desktop icon",
+        "As part of the setup wizard steps",
+        "Before providing a serial number"
+      ],
+      "optionImages": [],
+      "answer": ["As part of the setup wizard steps"]
+    },
+    {
+      "id": 4,
+      "questionImage": null,
+      "question": "How do you typically complete the installation of software in Windows 10?",
+      "options": [
+        "By sorting applications by install date",
+        "By confirming the uninstallation in a security prompt.",
+        "By clicking \"Finish\" at the end of the installation wizard",
+        "By providing a serial number during installation"
+      ],
+      "optionImages": [],
+      "answer": [
+        "By clicking \"Finish\" at the end of the installation wizard",
+        "By sorting applications by install date"
+      ]
+    },
+    {
+      "id": 5,
+      "questionImage": null,
+      "question": "What is the first step to uninstall software in Windows 10?",
+      "options": [
+        "Selecting the application from a list.",
+        "Opening the Windows menu and going to \"Settings.\"",
+        "Confirming the uninstallation in a security prompt",
+        "Scrolling through installed applications"
+      ],
+      "optionImages": [],
+      "answer": ["Opening the Windows menu and going to \"Settings.\""]
+    },
+    {
+      "id": 6,
+      "questionImage": null,
+      "question": "Where in Windows 10 settings can you navigate to view all installed applications for uninstallation?",
+      "options": [
+        "Privacy settings",
+        "Irrigation",
+        "Update & Security settings",
+        "System settings"
+      ],
+      "optionImages": [],
+      "answer": ["Apps settings"]
+    },
+    {
+      "id": 7,
+      "questionImage": null,
+      "question": "How can you locate an application quickly for uninstallation in Windows 10 settings?",
+      "options": [
+        "By creating a desktop icon",
+        "By sorting applications by install date",
+        "By accepting the End User License Agreement (EULA)",
+        "By double-clicking the installer file"
+      ],
+      "optionImages": [],
+      "answer": ["By sorting applications by install date"]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "eachQuestionDuration": 60,
+  "questions": [
+    {
+      "id": 1,
+      "questionImage": null,
+      "question": "What is the first step to initiate the installation process of software in Windows 10?",
+      "options": [
+        "Accept the End User License Agreement (EULA).",
+        "Double-click the installer file with a \".exe\" extension.",
+        "Choose the installation location.",
+        "Create a desktop icon"
+      ],
+      "optionImages": [
+        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS"
+      ],
+      "answer": [
+        "Double-click the installer file with a \".exe\" extension.",
+        "Create a desktop icon"
+      ]
+    },
+    {
+      "id": 2,
+      "questionImage": null,
+      "question": "What action triggers the User Account Control (UAC) prompt during software installation in Windows 10?",
+      "options": [
+        "Choosing the installation location",
+        "Double-clicking the installer file.",
+        "Accepting the End User License Agreement (EULA)",
+        "Creating a desktop icon"
+      ],
+      "optionImages": [],
+      "answer": ["Double-clicking the installer file."]
+    },
+    {
+      "id": 3,
+      "questionImage": null,
+      "question": "Where can you find the option to accept the End User License Agreement (EULA) during software installation?",
+      "options": [
+        "In the installation location settings.",
+        "After creating a desktop icon",
+        "As part of the setup wizard steps",
+        "Before providing a serial number"
+      ],
+      "optionImages": [],
+      "answer": [
+        "As part of the setup wizard steps",
+        "Before providing a serial number"
+      ]
+    },
+    {
+      "id": 4,
+      "questionImage": null,
+      "question": "How do you typically complete the installation of software in Windows 10?",
+      "options": [
+        "By sorting applications by install date",
+        "By confirming the uninstallation in a security prompt.",
+        "By clicking \"Finish\" at the end of the installation wizard",
+        "By providing a serial number during installation"
+      ],
+      "optionImages": [],
+      "answer": ["By clicking \"Finish\" at the end of the installation wizard"]
+    },
+    {
+      "id": 5,
+      "questionImage": null,
+      "question": "What is the first step to uninstall software in Windows 10?",
+      "options": [
+        "Selecting the application from a list.",
+        "Opening the Windows menu and going to \"Settings.\"",
+        "Confirming the uninstallation in a security prompt",
+        "Scrolling through installed applications"
+      ],
+      "optionImages": [],
+      "answer": ["Opening the Windows menu and going to \"Settings.\""]
+    },
+    {
+      "id": 6,
+      "questionImage": null,
+      "question": "Where in Windows 10 settings can you navigate to view all installed applications for uninstallation?",
+      "options": [
+        "Privacy settings",
+        "Irrigation",
+        "Update & Security settings",
+        "System settings"
+      ],
+      "optionImages": [],
+      "answer": ["Apps settings"]
+    },
+    {
+      "id": 7,
+      "questionImage": null,
+      "question": "How can you locate an application quickly for uninstallation in Windows 10 settings?",
+      "options": [
+        "By creating a desktop icon",
+        "By sorting applications by install date",
+        "By accepting the End User License Agreement (EULA)",
+        "By double-clicking the installer file"
+      ],
+      "optionImages": [],
+      "answer": ["By sorting applications by install date"]
+    },
+    {
+      "id": 8,
+      "questionImage": null,
+      "question": "What is the final step to completely remove a program during uninstallation in Windows 10?",
+      "options": [
+        "Confirming the uninstallation in a security prompt",
+        "Following any additional instructions",
+        "Sorting applications by install date",
+        "Providing a serial number"
+      ],
+      "optionImages": [],
+      "answer": ["Following any additional instructions"]
+    },
+    {
+      "id": 9,
+      "questionImage": null,
+      "question": "What action is required to confirm the uninstallation of a program in Windows 10?",
+      "options": [
+        "Creating a desktop icon\\",
+        "Accepting the End User License Agreement (EULA)",
+        "Clicking \"Uninstall\" after selecting the application",
+        "Double-clicking the installer file"
+      ],
+      "optionImages": [],
+      "answer": ["Clicking \"Uninstall\" after selecting the application"]
+    },
+    {
+      "id": 10,
+      "questionImage": null,
+      "question": "Which option is typically available after uninstalling a program in Windows 10 settings?",
+      "options": [
+        "Sorting applications by install date",
+        "Confirming the removal of related files",
+        "Double-clicking the installer file",
+        "Accepting the End User License Agreement (EULA)"
+      ],
+      "optionImages": [],
+      "answer": ["Confirming the removal of related files"]
+    }
+  ]
+}
