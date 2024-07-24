@@ -1,3 +1,4 @@
+// Dashboard.jsx
 import React, { useEffect, useState } from "react";
 import { auth, db, doc, onSnapshot, signOut } from "../firebase";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +15,7 @@ const Dashboard = () => {
   const [timeLeft, setTimeLeft] = useState("");
   const [noOfLevels, setNoOfLevels] = useState(0);
   const [levelsEnabled, setLevelsEnabled] = useState([]);
-  const [levelsCompleted, setLevelsCompleted] = useState([]);
+  const [levelsCompleted, setLevelsCompleted] = useState([]); // Ensure levelsCompleted is initialized
   const [levelsDisabled, setLevelsDisabled] = useState([]);
   const [levels, setLevels] = useState(null);
 
@@ -41,7 +42,7 @@ const Dashboard = () => {
               const currentDate = new Date();
               if (!userDocSnap.exists()) {
                 // Calculate the UTC time for July 20, 2024, at 9:30:00 AM UTC+5:30
-                const lastDayForGame = new Date(Date.UTC(2024, 6, 20, 4, 0, 0));
+                const lastDayForGame = new Date(Date.UTC(2024, 6, 25, 4, 0, 0));
 
                 const themeData = data.find(
                   (d) => d.Theme === docSnap.data().Theme

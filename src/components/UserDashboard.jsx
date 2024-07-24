@@ -1,6 +1,7 @@
+// UserDashboard.jsx
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal"; // Import react-modal
-import { doc, getDoc, setDoc } from "firebase/firestore"; // Import Firestore functions
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; // Import Firestore functions
 import data from "../jsonfiles/data.json";
 import { db } from "../firebase"; // Ensure you have configured Firebase
 import Game from "./Game";
@@ -30,6 +31,7 @@ const UserDashboard = ({
   const [allQuestionsIncomplete, setAllQuestionsIncomplete] = useState(false);
   const [isLoading, setIsLoading] = useState(true); // Add loading state
   const [gameData, setGameData] = useState(null);
+  const [duration, setDuration] = useState(0);
 
   useEffect(() => {
     if (selectedLevel && questions.length > 0 && levelsData) {
@@ -117,10 +119,13 @@ const UserDashboard = ({
       const questionStatus = levelData.questions.map((question) => ({
         id: question.id,
         completed: false, // Initialize all questions as incomplete
+        selectedAnswer: "",
+        questionScore: 0,
       }));
       setQuestions(levelData.questions);
       setNumberOfQuestions(numQuestions);
-      updateUserDoc(levelId, numQuestions, questionStatus);
+      checkAndUpdateUserDoc(levelId, numQuestions, questionStatus);
+      setDuration(levelData.eachQuestionDuration);
     } catch (error) {
       console.error("Failed to fetch level data:", error);
     } finally {
@@ -139,7 +144,11 @@ const UserDashboard = ({
     }
   };
 
-  const updateUserDoc = async (levelId, numQuestions, questionStatus) => {
+  const checkAndUpdateUserDoc = async (
+    levelId,
+    numQuestions,
+    questionStatus
+  ) => {
     setLevels(levelsData);
     try {
       const userDocRef = doc(
@@ -149,8 +158,12 @@ const UserDashboard = ({
       );
       const userDoc = await getDoc(userDocRef);
 
-      if (userDoc.exists() && userDoc.data().levels?.[levelId]) {
-        return;
+      if (userDoc.exists()) {
+        const existingNumQuestions =
+          userDoc.data().levels?.[levelId]?.numberOfQuestions;
+        if (existingNumQuestions === numQuestions) {
+          return;
+        }
       }
 
       await setDoc(
@@ -170,6 +183,39 @@ const UserDashboard = ({
     }
   };
 
+  const updateQuestionStatus = async (
+    questionId,
+    completed,
+    score,
+    selectedAnswer
+  ) => {
+    const updatedLevelsData = { ...levelsData };
+    const level = updatedLevelsData[selectedLevel.id];
+    const questionStatus = level.questionStatus.find(
+      (qs) => qs.id === questionId
+    );
+
+    if (questionStatus) {
+      questionStatus.completed = completed;
+      questionStatus.questionScore = score;
+      questionStatus.selectedAnswer = selectedAnswer;
+      setLevels(updatedLevelsData);
+
+      try {
+        const userDocRef = doc(
+          db,
+          "Contest-leaderboard",
+          `${userData.email}--${userData.username}`
+        );
+        await updateDoc(userDocRef, {
+          [`levels.${selectedLevel.id}.questionStatus`]: level.questionStatus,
+        });
+      } catch (error) {
+        console.error("Error updating question status:", error);
+      }
+    }
+  };
+
   const getLevels = () => {
     const levels = Array.from({ length: noOfLevels }, (_, i) => ({
       level: i + 1,
@@ -177,15 +223,21 @@ const UserDashboard = ({
     }));
 
     levelsEnabled.forEach((index) => {
-      levels[index].status = "enabled";
+      if (index < levels.length) {
+        levels[index].status = "enabled";
+      }
     });
 
     levelsCompleted.forEach((index) => {
-      levels[index].status = "completed";
+      if (index < levels.length) {
+        levels[index].status = "completed";
+      }
     });
 
     levelsDisabled.forEach((index) => {
-      levels[index].status = "disabled";
+      if (index < levels.length) {
+        levels[index].status = "disabled";
+      }
     });
 
     return levels;
@@ -304,12 +356,21 @@ const UserDashboard = ({
             onRequestClose={() => setIsModalOpen(false)}
             className="inset-0 bg-white relative h-full"
           >
-            <Game
-              gameType={selectedLevel.GameType}
-              questionIndex={incompleteQuestionIds[0] - 1}
-              onclick={() => setIsModalOpen(false)}
-              gameData={gameData}
-            />
+            {selectedLevel && (
+              <Game
+                gameType={selectedLevel.GameType}
+                questionIndex={incompleteQuestionIds[0] - 1}
+                onclick={() => setIsModalOpen(false)}
+                gameData={gameData}
+                userData={userData}
+                duration={duration} // Ensure duration is passed correctly
+                updateQuestionStatus={updateQuestionStatus}
+                levelsCompleted={levelsCompleted} // Pass levelsCompleted
+                levelsDisabled={levelsDisabled}
+                levelsEnabled={levelsEnabled}
+                selectedLevelId={selectedLevel.id}
+              />
+            )}
           </Modal>
         </section>
       )}

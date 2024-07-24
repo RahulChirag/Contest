@@ -4,24 +4,19 @@
     {
       "id": 1,
       "questionImage": null,
-      "question": "What is the first step to initiate the installation process of software in Windows 10?",
-      "options": [
-        "Accept the End User License Agreement (EULA).",
-        "Double-click the installer file with a \".exe\" extension.",
-        "Choose the installation location.",
-        "Create a desktop icon"
-      ],
+      "question": "What is the name of the planet where Thanos retrieves the Soul Stone in Avengers: Infinity War? \n",
+      "options": ["Vormir", "Xandar", "Titan", "Knowhere"],
       "optionImages": [
-        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS"
+        "/src/assets/marvel/3.png",
+        "/src/assets/marvel/2.png",
+        "/src/assets/marvel/1.png",
+        "/src/assets/marvel/4.png"
       ],
-      "answer": [
-        "Double-click the installer file with a \".exe\" extension.",
-        "Create a desktop icon"
-      ]
+      "answer": ["Titan", "Knowhere"]
     },
     {
       "id": 2,
-      "questionImage": null,
+      "questionImage": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS",
       "question": "What action triggers the User Account Control (UAC) prompt during software installation in Windows 10?",
       "options": [
         "Choosing the installation location",
@@ -34,7 +29,7 @@
     },
     {
       "id": 3,
-      "questionImage": null,
+      "questionImage": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS",
       "question": "Where can you find the option to accept the End User License Agreement (EULA) during software installation?",
       "options": [
         "In the installation location settings.",
@@ -42,7 +37,9 @@
         "As part of the setup wizard steps",
         "Before providing a serial number"
       ],
-      "optionImages": [],
+      "optionImages": [
+        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS"
+      ],
       "answer": [
         "As part of the setup wizard steps",
         "Before providing a serial number"
@@ -138,6 +135,32 @@
       ],
       "optionImages": [],
       "answer": ["Confirming the removal of related files"]
+    },
+    {
+      "id": 11,
+      "questionImage": null,
+      "question": "Which option is typically available after uninstalling a program in Windows 10 settings?",
+      "options": [
+        "Sorting applications by install date",
+        "Confirming the removal of related files",
+        "Double-clicking the installer file",
+        "Accepting the End User License Agreement (EULA)"
+      ],
+      "optionImages": [],
+      "answer": ["Confirming the removal of related files"]
+    },
+    {
+      "id": 12,
+      "questionImage": null,
+      "question": "What action is required to confirm the uninstallation of a program in Windows 10?",
+      "options": [
+        "Creating a desktop icon\\",
+        "Accepting the End User License Agreement (EULA)",
+        "Clicking \"Uninstall\" after selecting the application",
+        "Double-clicking the installer file"
+      ],
+      "optionImages": [],
+      "answer": ["Clicking \"Uninstall\" after selecting the application"]
     }
   ]
 }
