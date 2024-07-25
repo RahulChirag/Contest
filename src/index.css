@@ -22,3 +22,11 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.space-x-2 > * + * {
+  margin-left: 0.5rem; /* Adjust the space between elements */
+}

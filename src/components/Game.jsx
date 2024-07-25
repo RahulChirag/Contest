@@ -1,6 +1,7 @@
 // Game.jsx
 import React from "react";
 import McqGame from "./McqGame";
+import FibGame from "./FibGame";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -44,6 +45,20 @@ const Game = ({
       case "MCQ":
         return (
           <McqGame
+            currentQuestion={gameData[questionIndex]}
+            onclick={onclick}
+            userData={userData}
+            duration={duration}
+            updateQuestionStatus={updateQuestionStatus}
+            handleUnlockNextLevel={handleUnlockNextLevel}
+            levelsCompleted={levelsCompleted} // Pass levelsCompleted
+            Index={questionIndex}
+            gameData={gameData}
+          />
+        );
+      case "Fill in the Blanks":
+        return (
+          <FibGame
             currentQuestion={gameData[questionIndex]}
             onclick={onclick}
             userData={userData}

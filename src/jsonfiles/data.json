@@ -13,8 +13,8 @@
         {
           "id": 1,
           "Level": "Level 2",
-          "GamePath": "/assets/harry-potter-Spell.json",
-          "GameType": "MCQ"
+          "GamePath": "/assets/harry-potter-Fill in the Blanks.json",
+          "GameType": "Fill in the Blanks"
         },
         {
           "id": 2,

@@ -199,6 +199,7 @@ const UserDashboard = ({
       questionStatus.completed = completed;
       questionStatus.questionScore = score;
       questionStatus.selectedAnswer = selectedAnswer;
+      console.log(questionStatus.selectedAnswer);
       setLevels(updatedLevelsData);
 
       try {

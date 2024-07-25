@@ -1,0 +1,75 @@
+{
+  "eachQuestionDuration": 60,
+  "questions": [
+    {
+      "id": 1,
+      "question": "To be, or not to be, that is * ?",
+      "correctAnswers": ["the question"],
+      "options": ["the question", "your answer", "a mystery"],
+      "trivia": "This famous line is from Hamlet, Act III, Scene I."
+    },
+    {
+      "id": 2,
+      "question": "All the world's * , And all the men and women merely * ?",
+      "correctAnswers": ["a stage", "players"],
+      "options": ["a stage", "players", "actors"],
+      "trivia": "This line Ais from As You Like It, Act II, Scene VII."
+    },
+    {
+      "id": 3,
+      "question": "What's in a * ? That which we call a rose by any other name would smell as * ?",
+      "correctAnswers": ["name", "sweet"],
+      "options": ["name", "sweet", "scent"],
+      "trivia": "This dialogue is from Romeo and Juliet, Act II, Scene II."
+    },
+    {
+      "id": 4,
+      "question": "To thine own * be true, And it must follow, as the * the day, Thou canst not then be false to any man.",
+      "correctAnswers": ["self", "night"],
+      "options": ["self", "night", "sun"],
+      "trivia": "This advice is given by Polonius to Laertes in Hamlet, Act I, Scene III."
+    },
+    {
+      "id": 5,
+      "question": "All that glitters is * .",
+      "correctAnswers": ["not gold"],
+      "options": ["not gold", "golden", "shiny"],
+      "trivia": "This line is from The Merchant of Venice, Act II, Scene VII."
+    },
+    {
+      "id": 6,
+      "question": "If you prick us, do we not * ? If you tickle us, do we not * ?",
+      "correctAnswers": ["bleed", "laugh"],
+      "options": ["bleed", "laugh", "cry"],
+      "trivia": "This dialogue is from The Merchant of Venice, Act III, Scene I."
+    },
+    {
+      "id": 7,
+      "question": "Some are born great, some achieve * , and some have greatness thrust upon * .",
+      "correctAnswers": ["greatness", "them"],
+      "options": ["greatness", "them", "fame"],
+      "trivia": "This line is from Twelfth Night, Act II, Scene V."
+    },
+    {
+      "id": 8,
+      "question": "Brevity is the * of * .",
+      "correctAnswers": ["soul", "wit"],
+      "options": ["soul", "wit", "essence"],
+      "trivia": "This line is from Hamlet, Act II, Scene II."
+    },
+    {
+      "id": 9,
+      "question": "The course of true * never did run smooth.",
+      "correctAnswers": ["love"],
+      "options": ["love", "life", "fortune"],
+      "trivia": "This line is from A Midsummer Night's Dream, Act I, Scene I."
+    },
+    {
+      "id": 10,
+      "question": "Cowards die many times before their * , The valiant never * of death but once.",
+      "correctAnswers": ["deaths", "taste"],
+      "options": ["deaths", "taste", "fear"],
+      "trivia": "This line is from Julius Caesar, Act II, Scene II."
+    }
+  ]
+}

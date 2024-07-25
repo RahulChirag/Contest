@@ -41,8 +41,8 @@ const Dashboard = () => {
             onSnapshot(userDocRef, async (userDocSnap) => {
               const currentDate = new Date();
               if (!userDocSnap.exists()) {
-                // Calculate the UTC time for July 20, 2024, at 9:30:00 AM UTC+5:30
-                const lastDayForGame = new Date(Date.UTC(2024, 6, 25, 4, 0, 0));
+                // Calculate the UTC time for July 27, 2024, at 9:30:00 AM UTC+5:30
+                const lastDayForGame = new Date(Date.UTC(2024, 6, 27, 4, 0, 0));
 
                 const themeData = data.find(
                   (d) => d.Theme === docSnap.data().Theme
