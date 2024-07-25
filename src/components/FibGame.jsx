@@ -140,7 +140,7 @@ const FibGame = ({
       <div className="flex flex-row justify-center items-center flex-wrap space-x-2">
         {parts.map((part, index) => (
           <React.Fragment key={index}>
-            <span className="text-xl font-semibold text-center text-white lg:text-3xl">
+            <span className="text-2xl font-semibold text-center text-white lg:text-3xl">
               {part}
             </span>
             {index < parts.length - 1 && <Blank index={index} />}
@@ -194,18 +194,38 @@ const FibGame = ({
     return (
       <span
         ref={drop}
-        className={`flex items-center justify-center p-2 border-2 border-dashed m-2 rounded text-center min-h-10 ${
+        className={`flex items-center justify-center p-2 m-2 rounded text-center min-h-10 ${
           isActive ? "bg-sky-500" : "bg-headerBlue"
-        }`}
+        }${blanks[index] ? "p-2" : ""}`}
       >
         {blanks[index] ? (
-          <DraggableSpan index={index} text={blanks[index]} />
+          <span>
+            <DraggableSpan index={index} text={blanks[index]} />
+            <UnderlineSVG
+              width="100%"
+              height="2px"
+              color="white"
+              style={{ position: "absolute", bottom: 0, left: 0 }}
+            />
+          </span>
         ) : (
-          "_____"
+          <span className="font-semibold text-xl">_________</span>
         )}
       </span>
     );
   };
+
+  const UnderlineSVG = ({ width, height, color }) => (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 100 2"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ display: "block", marginTop: 5 }}
+    >
+      <rect width="100%" height="100%" fill={color} />
+    </svg>
+  );
 
   const Option = ({ option, draggable = true }) => {
     const [{ isDragging }, drag, preview] = useDrag(() => ({
@@ -217,7 +237,7 @@ const FibGame = ({
     }));
 
     const baseClass =
-      "font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis text-center md:text-xl lg:text-3xl bg-custom-button-yellow rounded p-2 ";
+      "font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis text-center text-xl md:text-2xl lg:text-3xl bg-custom-button-yellow rounded p-2 ";
     const dragClass = isDragging ? "opacity-0" : "opacity-100";
 
     return draggable ? (
@@ -279,8 +299,8 @@ const FibGame = ({
         </div>
 
         {/* Options */}
-        <div className="flex flex-col overflow-auto mb-1 p-2 max-h-64 min-h-48 bg-custom-header-blue ">
-          <ul className="flex items-center justify-center space-x-3">
+        <div className="flex flex-col overflow-auto rounded-t-xl p-2 max-h-64 min-h-28 bg-custom-header-blue ">
+          <ul className="flex items-center justify-center space-x-3 h-full">
             {renderOptions(options)}
           </ul>
         </div>
