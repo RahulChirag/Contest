@@ -1,5 +1,5 @@
 {
-  "eachQuestionDuration": 60,
+  "eachQuestionDuration": 6000000,
   "questions": [
     {
       "id": 1,

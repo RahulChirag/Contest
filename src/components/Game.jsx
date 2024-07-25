@@ -17,15 +17,24 @@ const Game = ({
   levelsDisabled,
   levelsEnabled,
   selectedLevelId,
+  totalLevels,
 }) => {
   const handleUnlockNextLevel = async () => {
     console.log("nextLevelUnlocked");
     const nextLevelId = selectedLevelId + 1;
-    const updatedLevelsCompleted = [...levelsCompleted, selectedLevelId];
+    if (totalLevels === nextLevelId) return;
+    // Check if the selectedLevelId is already in levelsCompleted
+    const updatedLevelsCompleted = levelsCompleted.includes(selectedLevelId)
+      ? levelsCompleted
+      : [...levelsCompleted, selectedLevelId];
+
     const updatedLevelsDisabled = levelsDisabled.filter(
       (id) => id !== nextLevelId
     );
-    const updatedLevelsEnabled = [...levelsEnabled, nextLevelId];
+
+    const updatedLevelsEnabled = levelsEnabled.includes(nextLevelId)
+      ? levelsEnabled
+      : [...levelsEnabled, nextLevelId];
 
     const userDocRef = doc(
       db,

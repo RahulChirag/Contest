@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
+import selectionSound from "../sounds/selection.mp3";
+
 const McqGame = ({
   currentQuestion,
   onclick,
@@ -47,6 +49,8 @@ const McqGame = ({
   const isMultiSelect = Array.isArray(answer) && answer.length > 1;
 
   const handleOptionClick = (option) => {
+    const audio = new Audio(selectionSound);
+    audio.play();
     setShowNext(true);
     let newSelectedOptions = [];
     if (isMultiSelect) {
@@ -106,6 +110,18 @@ const McqGame = ({
         Level Completed.
       </div>
     );
+  } else {
+    <div className="max-w-full mx-auto p-4 border rounded-lg shadow-lg h-screen flex flex-col">
+      <div className="flex justify-between mb-4 items-center">
+        <button
+          onClick={onclick}
+          className="bg-blue-500 text-white py-2 px-4 rounded"
+        >
+          Close Game
+        </button>
+      </div>
+      No data Found.
+    </div>;
   }
 
   const color = [

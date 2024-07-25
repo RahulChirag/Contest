@@ -18,6 +18,7 @@ const Dashboard = () => {
   const [levelsCompleted, setLevelsCompleted] = useState([]); // Ensure levelsCompleted is initialized
   const [levelsDisabled, setLevelsDisabled] = useState([]);
   const [levels, setLevels] = useState(null);
+  const [totalLevels, setTotalLevels] = useState(0);
 
   const navigate = useNavigate();
 
@@ -89,6 +90,7 @@ const Dashboard = () => {
                 setLevelsCompleted(userDocSnap.data().levelsCompleted || []);
                 setLevelsDisabled(userDocSnap.data().levelsDisabled || []);
                 setLevels(userDocSnap.data().levels);
+                setTotalLevels(userDocSnap.data().noOfLevels);
               }
             });
           } else {
@@ -139,6 +141,7 @@ const Dashboard = () => {
           levelsDisabled={levelsDisabled}
           levelsData={levels}
           setLevels={setLevels}
+          totalLevels={totalLevels}
         />
       )}
     </>

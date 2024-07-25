@@ -22,6 +22,7 @@ const UserDashboard = ({
   levelsDisabled,
   levelsData,
   setLevels,
+  totalLevels,
 }) => {
   const [selectedLevel, setSelectedLevel] = useState(null);
   const [numberOfQuestions, setNumberOfQuestions] = useState(0);
@@ -126,10 +127,9 @@ const UserDashboard = ({
       setNumberOfQuestions(numQuestions);
       checkAndUpdateUserDoc(levelId, numQuestions, questionStatus);
       setDuration(levelData.eachQuestionDuration);
+      setIsLoading(false);
     } catch (error) {
       console.error("Failed to fetch level data:", error);
-    } finally {
-      setIsLoading(false); // Stop loading
     }
   };
 
@@ -139,6 +139,7 @@ const UserDashboard = ({
       const levelData = themeData.Content.Levels.find(
         (level) => level.id === levelId
       );
+
       setSelectedLevel(levelData);
       fetchLevelData(levelData.GamePath, levelId);
     }
@@ -370,6 +371,7 @@ const UserDashboard = ({
                 levelsDisabled={levelsDisabled}
                 levelsEnabled={levelsEnabled}
                 selectedLevelId={selectedLevel.id}
+                totalLevels={totalLevels}
               />
             )}
           </Modal>
