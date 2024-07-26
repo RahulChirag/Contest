@@ -3,6 +3,7 @@ import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 import selectionSound from "../sounds/selection.mp3";
+import changeQuestion from "../sounds/questionChange.mp3";
 
 const McqGame = ({
   currentQuestion,
@@ -24,6 +25,9 @@ const McqGame = ({
   useEffect(() => {
     setTimer(duration);
     setSelectedOptions([]);
+    const audio = new Audio(changeQuestion);
+    audio.play();
+    audio.volume = 0.1;
   }, [duration, currentQuestion]);
 
   useEffect(() => {
